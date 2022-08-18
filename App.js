@@ -1,0 +1,27 @@
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import Register from './src/components/RegisterScreen';
+import Dashboard from './src/components/Dashboard';
+// import QrScreen from './src/components/QrCode';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Camera from './src/components/camera';
+const Stack = createNativeStackNavigator();
+const App = () => {
+  return (
+    <NavigationContainer style={styles.container}>
+      <Stack.Navigator>
+        <Stack.Screen name="Registration Screen" component={Register} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Camera" component={Camera} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
